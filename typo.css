@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
+body{
+    margin: 0px 200px 0px 200px;
+    padding: 0;
+    background-color: #232121;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    display: grid;
+    grid-template-rows: 110px auto auto 75px;
+    align-items: center;
+}
+
+p{
+    font-weight: 400;
+}
+
+.overlay{
+    left: 0;
+    top: 0;
+    display: grid;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.8);
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    animation-name: fadeIn;
+    animation-duration:1s;
+    color: #FC5D47;
+}
+
+
+a{
+    text-decoration: none;
+    color: #FC5D47;
+}
+
+.body-text{
+    margin-right: 25%;
+    line-height: 1.8;
+}
+
+.under-content{
+    color: #FC5D47;
+    align-self: start;
+}
+
+.top-menu, .under-content{
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.footer{
+    font-size: 0.75em;
+    color: #666060;
+}
+
+
+.char {
+    margin: 0.5em;
+    padding: 1em;
+    padding-bottom: 3em;
+    position: relative; 
+    font-weight: 700;
+}
+
+.piece {
+    color: white;
+    font-size: 5em;
+    margin: .1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix { display: inline-block; }
+
+
+.top-left{
+    clip-path: padding-box polygon(0% 0%, 48% 0%, 48% 49%, 0% 49% );
+}
+
+.top-right{
+    clip-path: padding-box polygon(52% 0%, 100% 0%, 100% 49%, 52% 49% );
+}
+
+.bot-left{
+    clip-path: padding-box polygon(0% 51%, 48% 51%, 48% 100%, 0% 100% );
+}
+
+.bot-right{
+    clip-path: padding-box polygon(52% 51%, 100% 51%, 100% 100%, 52% 100% );
+}  
+
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+.shake {
+    animation-name: shake;
+    animation-duration:0.2s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+@keyframes shake {
+    0% {
+        transform: translateX(10px);
+    }
+    33% {
+        transform: translateX(0px);
+    }
+    66%{
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@media (max-width: 1000px) { 
+
+    .piece {
+        font-size: 2.5em;
+    }
+
+    body {
+        margin: 0px 25px 0px 25px;
+        grid-template-rows: 75px auto auto 50px;
+    }
+
+    .char {
+        margin: 0.5em;
+        padding: 0.5em;
+        padding-bottom: 1em;
+        position: relative; 
+        font-weight: 700;
+    }
+
+    .top-menu, .under-content{
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+
+    .body-text{
+        margin-right: 0;
+        line-height: 1.8;
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) { 
+    .piece {
+        font-size: 4em;
+    }
+
+    body {
+        margin: 0px 50px 0px 50px;
+        grid-template-rows: 100px auto auto 75px;
+    }
+
+    .char {
+        margin: 0.7em;
+        padding: 0.7em;
+        padding-bottom: 1.5em;
+        position: relative; 
+        font-weight: 700;
+    }
+}
