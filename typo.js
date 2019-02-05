@@ -60,14 +60,8 @@ function initFunction() {
     shakeEvent.start();
     window.addEventListener('shake', function(){
       handleKeyPress();
-      alert("Shaked");
+      //alert("Shaked");
     }, false);
-
-    //stop listening
-    function stopShake(){
-        shakeEvent.stop();
-    }
-
 
 }
 
