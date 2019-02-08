@@ -16,6 +16,10 @@ body{
 p{
     font-weight: 400;
 }
+h3{
+    font-weight: 400;
+	font-size: 3em;
+}
 
 .overlay{
     left: 0;
