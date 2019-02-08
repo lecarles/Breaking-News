@@ -21,7 +21,7 @@ var refreshRate = 15000;
 
 //NEWS API
 var url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
+    'sources=google-news' +
     'apiKey=492d86d650b14a0598ee2feb11abaffd';
 
 var req = new Request(url);
