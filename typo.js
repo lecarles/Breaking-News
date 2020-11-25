@@ -20,25 +20,43 @@ var source;
 var refreshRate = 15000;
 
 //NEWS API
-var url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
-    'apiKey=492d86d650b14a0598ee2feb11abaffd';
+const headlines =
+    [
+        {
+            title: "Trump falsely claims victory - 'The campaign, which I won, by the way'",
+            source: "BBC.com"
+        },
+        {
+            title: "Coronavirus: How Europeans are preparing for Christmas and New Year",
+            source: "BBC.com"
+        },
+        {
+            title: "National Geographic reveals its best destinations for 2021",
+            source: "CNN"
+        },
+        {
+            title: "Spain's unemployment rate leaps to 16 percent amid coronavirus crisis",
+            source: "The Local"
+        },
+        {
+            title: "UK aid budget cuts undermine trust ahead of Cop26 summit, experts warn",
+            source: "Climate Home News"
+        },
+        {
+            title: "Armenians flee Nagorno-Karabakh after brutal war with Azerbaijan",
+            source: "The Guardian"
+        }
+    ];
 
-var req = new Request(url);
-news = fetch(req).then(function (response) {
-        return response.json();
-      }).then(function(jsonData){
-        news = jsonData;
-        initFunction();
-      });
-
+document.onkeypress = function() {
+    document.getElementById('overlay').style.display = "none";
+}; 
+initFunction();
 
 //INITIALISE
 function initFunction() {
-    
-    headline = news.articles[k].title;
-    source = headline.substring(headline.indexOf(" - "));
-    headline = Array.from(headline.substring(0 , headline.indexOf("-")));
+    headline = headlines[k].title;
+    source = headlines[k].source;
     wrapper = document.getElementById('headline-container');
     document.getElementById('source').innerHTML = source;
 
