@@ -23,10 +23,6 @@ var refreshRate = 15000;
 const headlines =
     [
         {
-            title: "Trump falsely claims victory - 'The campaign, which I won, by the way'",
-            source: "BBC.com"
-        },
-        {
             title: "Coronavirus: How Europeans are preparing for Christmas and New Year",
             source: "BBC.com"
         },
@@ -45,6 +41,10 @@ const headlines =
         {
             title: "Armenians flee Nagorno-Karabakh after brutal war with Azerbaijan",
             source: "The Guardian"
+        },
+        {
+          title: "Trump falsely claims victory - 'The campaign, which I won, by the way'",
+          source: "BBC.com"
         }
     ];
 
@@ -134,11 +134,9 @@ function destroyNews(){
     }
 }
 
-
-//every
- window.setInterval(function(){
+window.setInterval(function(){
     
-    if (k == news.articles.length - 1){
+    if (k == headlines.length - 1){
         k = 0;
     } else {
         k++;
